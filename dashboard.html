@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-primary">
+
+<div class="container-fluid">
+
+<span class="navbar-brand">
+
+🏢 Leave Request Management System
+
+</span>
+
+<button class="btn btn-light" onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+</nav>
+
+<div class="container mt-4">
+
+<div class="row">
+
+<!-- Leave Balance -->
+
+<div class="col-md-3">
+
+    <div class="card shadow border-primary">
+
+        <div class="card-body text-center">
+
+            <h6>Annual Leave</h6>
+
+            <h2 id="annualBalance">20</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3">
+
+    <div class="card shadow border-success">
+
+        <div class="card-body text-center">
+
+            <h6>Medical Leave</h6>
+
+            <h2 id="medicalBalance">10</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3">
+
+    <div class="card shadow border-warning">
+
+        <div class="card-body text-center">
+
+            <h6>Casual Leave</h6>
+
+            <h2 id="casualBalance">7</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-3">
+
+    <div class="card shadow border-danger">
+
+        <div class="card-body text-center">
+
+            <h6>Emergency Leave</h6>
+
+            <h2 id="emergencyBalance">5</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h5>Employee</h5>
+
+<h3 id="employeeName"></h3>
+
+<p id="employeeEmail"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h5>Total Requests</h5>
+
+<h2 id="totalRequests">0</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h5>Pending Requests</h5>
+
+<h2 id="pendingRequests">0</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="card shadow mt-4">
+
+<div class="card-header bg-success text-white">
+
+Apply Leave
+
+</div>
+
+<div class="card-body">
+
+<form id="leaveForm">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label>Leave Type</label>
+
+<select class="form-control" id="leaveType">
+
+<option>Annual</option>
+
+<option>Medical</option>
+
+<option>Emergency</option>
+
+<option>Casual</option>
+
+</select>
+
+</div>
+
+<div class="col-md-4">
+
+<label>Start Date</label>
+
+<input type="date" class="form-control" id="startDate" required>
+
+</div>
+
+<div class="col-md-4">
+
+<label>End Date</label>
+
+<input type="date" class="form-control" id="endDate" required>
+
+</div>
+
+</div>
+
+<div class="mt-3">
+
+<label>Reason</label>
+
+<textarea class="form-control" id="reason" rows="4"></textarea>
+
+</div>
+
+<button class="btn btn-success mt-3">
+
+Submit Leave Request
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="card shadow">
+
+<div class="card-header bg-dark text-white">
+
+My Leave Requests
+
+</div>
+
+<div class="card-body">
+
+<table class="table table-bordered">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Type</th>
+
+<th>Start</th>
+
+<th>End</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leaveTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/database.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/employee.js"></script>
+
+</body>
+
+</html>
